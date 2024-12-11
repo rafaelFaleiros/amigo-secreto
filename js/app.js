@@ -9,6 +9,10 @@ function adicionar (){
         alert('Informe um Nome!');
         return;
     }
+    else if (amigos.includes(nome)){
+        alert('Nome já adicionado!');
+        return;
+    }
     amigos.push(nome);
     console.log(amigos);
     document.getElementById('lista-amigos').innerHTML = amigos;
