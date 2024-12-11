@@ -5,12 +5,20 @@ let sorteio = 0;
 
 function adicionar (){
     let nome = document.getElementById('nome-amigo').value;
+    if (nome == ''){
+        alert('Informe um Nome!');
+        return;
+    }
     amigos.push(nome);
     console.log(amigos);
     document.getElementById('lista-amigos').innerHTML = amigos;
 }
 
 function sortear(){
+    if (amigos.length < 4){
+        alert('Adicione pelo menos 4 amigos');
+        return;
+    }
     while(sorteados.length <amigos.length){
 
         let selecionado = parseInt(Math.random() * amigos.length);
